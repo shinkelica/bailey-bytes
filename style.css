@@ -15,12 +15,11 @@ body
 }
 .navbar
 {
-    background-image: linear-gradient(to right, #a517ba, #a51782);
+    background-image: linear-gradient(to right, #5678c6, #2150c1);
     padding: 0 !important;
 }
-.navbar-brand img
-{
-    height: 40px;
+.navbar-brand img {
+    height: 50px; /* Increased height for a bigger logo */
     padding-left: 20px;
 }
 .navbar-nav li
@@ -44,10 +43,11 @@ body
     outline: none !important;
 }
 
+
 /* ------------- banner section ------------------*/
-#banner
-{
-    background-image: linear-gradient(to right, #a517ba, #a51782);
+#banner {
+    position: relative;
+    background-image: linear-gradient(to right, #5678c6, #2150c1);
     color: #fff;
     padding-top: 5%;
 }
@@ -62,14 +62,38 @@ body
     width: 45px;
     margin: 20px;
 }
-#banner a
-{
+#banner {
+    position: relative;
+    background-image: linear-gradient(to right, #5678c6, #2150c1);
     color: #fff;
-    text-decoration: none;
+    padding-top: 5%;
 }
-.bottom-img
-{
+
+.animated-text {
+    position: relative;
+    z-index: 2; /* Ensure text is above the image */
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 100px;
+    overflow: hidden;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bottom-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
+    height: auto;
+    z-index: 1; /* Ensures the image is below the text */
+    opacity: 0.3; /* Set transparency level */
 }
 /*-------------------- services section ----------------------*/
 #services
@@ -96,7 +120,7 @@ body
 .title::before
 {
     content: '';
-    background: #7b1798;
+    background: #2150c1;
     height: 5px;
     width: 250px;
     margin-left: auto;
@@ -155,7 +179,7 @@ body
 
 .small-title {
     font-size: 32px;
-    color: #7b1798; /* Matching your primary color */
+    color: #2150c1; /* Matching your primary color */
     font-weight: bold;
     margin-top: 40px; /* Increase space above each title */
     margin-bottom: 10px;
@@ -181,7 +205,7 @@ body
 
 /*------------------------- footer section ---------------------*/
 #footer {
-    background-image: linear-gradient(to right, #a517ba, #5f1782);
+    background-image: linear-gradient(to right, #7176e0, #2b56bf);
     color: #fff;
 }
 .footer-img {
@@ -191,7 +215,7 @@ body
     padding: 20px;
 }
 .footer-box img {
-    width: 120px;
+    width: 180px;
     margin-bottom: 20px;
 }
 .footer-box .fa-solid {
@@ -202,7 +226,7 @@ body
     text-align: center;
     padding-top: 7px;
     border-radius: 2px;
-    background-image: linear-gradient(to right, #a517ba, #5f1782);
+    background-image: linear-gradient(to right, #7176e0, #2b56bf);
 }
 .footer-box .form-control {
     box-shadow: none !important;
@@ -216,5 +240,46 @@ body
     border: none;
     border-radius: 0;
     margin-top: 30px;
-    background-image: linear-gradient(to right, #a517ba, #5f1782);
+    background-image: linear-gradient(to right, #7176e0, #2b56bf);
+}
+
+/*------------------------- Animated Headline text ------------------------------/*
+/* Styles for the animated text */
+.animated-text {
+    font-size: 60px; /* Increased font size for more impact */
+    font-weight: 600; /* Bold font weight */
+    color: #fff;
+    margin-top: 100px;
+    overflow: hidden;
+    height: 220px; /* Adjusted height for the larger text */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1.2; /* Adjust line height for spacing between lines */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text-line {
+    transform: translateX(-100%);
+    animation: slide-in 1s forwards;
+    opacity: 0;
+}
+
+.text-line:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.text-line:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+.animated-text {
+    overflow: hidden;
+}
+
+@keyframes slide-in {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
